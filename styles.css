@@ -1,5 +1,8 @@
+/* Used Universal Selector to remove browsers default padding and margin */
 *{
-  box-sizing: border-box;
+  box-sizing: border-box; /* for a more predictable layout as the width and height for each element will include padding and 
+  border , it removes extra spacing around elements making layout consistent .. 
+  without this padding and borders would make elemnts bigger than the width and height you set */
   margin: 0;
   padding: 0;
 }
@@ -25,9 +28,28 @@ body {
     padding: 80px;
     border-radius: 10px;
     width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    
+    /* removed position relative this created 
+     a reference point for the child element with
+     position absolute was no longer necessary 
+     as i allowed flex box to handle the layout */
+    
+    display: flex; 
+     
+    /* this is a layout tool that allows us to arrange
+    items in the container to be in rows or columns in this case rows additionally 
+    allowing us to define the alignment and spacing around the elements 
+    */
+    
+    justify-content: space-around; 
+    
+    /*controls horizontal alignment by 
+    spacing items evenly with space around them horizontally */
+    
+    align-items: center; 
+    
+    /*controls vertical alignment by 
+    vertically centering the elements within the container*/
   }
   
   .pastry {
@@ -35,6 +57,10 @@ body {
     padding: 20px;
     border-radius: 50%;
     font-size: 18px;
+    
+    /* Identified the bug which was position absolute ..
+     this was placing the pastry elements in specific positions preventing 
+     the flex box to handle the layout of aligning the items in a row and spacing them evenly */
     
   }
   
@@ -67,4 +93,3 @@ body {
     right: 0;
     background-color: #7fa8f0; 
   }
-  
